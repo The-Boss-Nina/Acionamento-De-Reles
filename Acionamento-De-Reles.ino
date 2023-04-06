@@ -1,4 +1,3 @@
-
 //https://portal.vidadesilicio.com.br/shield-ethernet-w5100-acionamento-remoto-de-reles-com-html/
 
 #include <SPI.h>
@@ -83,8 +82,7 @@ void loop()
 void criarformulario(EthernetClient client_aux, String parametro_aux)
 {
  
- 
-   for(int i = 0; i<2; i++)
+for(int i = 0; i<2; i++)
    {
        client_aux.println("Porta D" + String(i)+ ":");
        client_aux.println("<input type=\"checkbox\"  name=\"D" + String(i) + "\"  value=\"1\" onclick=\"submit()\" disabled>PINO NÃO UTILIZADO (DESABILITADO)</br>");
@@ -92,7 +90,6 @@ void criarformulario(EthernetClient client_aux, String parametro_aux)
  
 for(int i = 2; i<6; i++)
    {
-      
        client_aux.println("Porta D" + String(i)+ " (Relé " + String (i - 1) + ") :");
        if(parametro_aux.indexOf("D" + String(i)+ "=1") > -1)
        {
@@ -112,7 +109,6 @@ for(int i = 2; i<6; i++)
        client_aux.println("<input type=\"checkbox\"  name=\"D" + String(i) + "\"  value=\"1\" onclick=\"submit()\" disabled>PINO NÃO UTILIZADO (DESABILITADO)</br>");
    }   
    
- 
    for(int i = 10; i<14; i++)
    {
        client_aux.println("Porta D" + String(i)+ ":");
